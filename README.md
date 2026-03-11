@@ -3,11 +3,11 @@
 A dynamic visualization of a fractal tree built with **Processing.js**. This project uses recursive algorithms and trigonometric functions to create a "breathing" effect, where the branches open and close smoothly.
 
 ## 🔗 Live Demo
-Check out the animated fractal tree here: [Insert Your GitHub Pages Link Here]
+Check out the animated fractal tree here: [Fractal tree](https://shankhalikamallick.github.io/Fractral_Tree/)
 
 ## 🚀 Overview
 
-This project was developed and tested on [CodePen](https://codepen.io). It demonstrates how simple mathematical rules can generate complex, organic-looking patterns. The tree's branches oscillate between a closed state and a 180-degree total spread.
+This project was developed and tested on [CodePen](https://codepen.io/Shankx/full/azmBWOY). It demonstrates how simple mathematical rules can generate complex, organic-looking patterns. The tree's branches oscillate between a closed state and a 180-degree total spread.
 
 ## 🛠️ Technical Breakdown
 
