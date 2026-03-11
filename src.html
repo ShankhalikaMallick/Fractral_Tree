@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Fractal Tree</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+  <style>
+    body { margin: 0; padding: 0; display: flex; justify-content: center; background-color: #000; overflow: hidden; }
+    canvas { margin-top: 50px; }
+  </style>
+</head>
+<body>
+  <script type="application/processing">
+    float startSize = 150;
+    float angle1, angle2;
+
+    void setup() {
+      size(5000, 600);
+      stroke(255, 100, 100);              // rgb range of 0-255
+      strokeWeight(2);
+      noSmooth();
+    }
+
+    void draw() {
+      background(0);
+      translate(width/2, height - 50);
+      
+      // sin() oscillates between -1 and 1
+      float wave = cos(frameCount * 0.02); 
+      
+      // Map the wave to 0 -> 90 degrees (PI/2 radians)
+      // Since there are two branches, 90 + 90 = 180 degree total opening
+      float currentAngle = map(wave, -1, 1, 0, PI/2); 
+      
+      angle1 = currentAngle;
+      angle2 = currentAngle;
+      
+      drawFractal(startSize, 0);
+    }   
+
+    void drawFractal(float len, int depth) {
+      if (len > 4 && depth < 10) {
+        line(0, 0, 0, -len);
+        translate(0, -len);
+        
+        pushMatrix();
+        rotate(angle1);
+        drawFractal(len * 0.68, depth + 1);
+        popMatrix();
+        
+        pushMatrix();
+        rotate(-angle2);
+        drawFractal(len * 0.68, depth + 1);
+        popMatrix();
+      }
+    }
+  </script>
+  <canvas></canvas>
+</body>
+</html>
